@@ -76,6 +76,7 @@ body, html {
     left: 0;
     z-index: 1;
     transform: rotate(-30deg);
+    margin-left: -30px;
 }
 
 .gameContent .row.contentImage .versus .result h5{
@@ -88,6 +89,7 @@ body, html {
     letter-spacing: 2px;
     color: #ffffff;
     height: 55px;
+    padding: 10px 40px;
 }
 
 
@@ -158,6 +160,10 @@ body, html {
 @media (min-width: 992px) {
     .customHeader a .headerTitle {
         font-size: 30px;
+    }
+
+    .bgColor {
+        height: 105%;
     }
 
     .gameContent .row div h3 {
