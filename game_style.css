@@ -47,12 +47,11 @@ body, html {
 }
 
 .gameContent .row div.greyBox {
-    background-color: #c4c4c4;
-    border: 1px #c4c4c4;
+    /*background-color: #c4c4c4;*/
     border-radius: 15%;
 }
 
-.gameContent .row div.refresh img{
+.gameContent .refresh{
     width: 50px;
     height: 50px;
 }
