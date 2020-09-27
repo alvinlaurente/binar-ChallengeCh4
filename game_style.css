@@ -9,14 +9,14 @@ body, html {
 }
 
 .customHeader a .headerTitle{
-    font-size: 28px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     color: #ffc107;
 }
 
 .bgColor {
-    height: 100%;
+    height: 110%;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -33,23 +33,21 @@ body, html {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    letter-spacing: 3px;
 }
 
 .gameContent .row div h1 {
     font-weight: bold;
-    font-size: 80px;
-    letter-spacing: 10px;
+    font-size: 40px;
     color: rgb(189,48,46);
 }
 
-.gameContent .row.contentImage .col-lg-3{
-    height: 13vw;
+.gameContent .row.contentImage .col-xs-3{
+    height: 70px;
 }
 
 .gameContent .row.contentImage img {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
 }
 
 .gameContent .row div.greyBox {
@@ -61,4 +59,89 @@ body, html {
 .gameContent .row div.refresh img{
     width: 30px;
     height: 30px;
+}
+
+
+/* Smaller Device version */
+@media (min-width: 576px) and (max-width: 768px) {
+    .customHeader a .headerTitle {
+        font-size: 24px;
+    }
+
+    .bgColor {
+        height: 100%;
+    }
+
+    .gameContent .row div h3 {
+        font-size: 24px;
+    }
+
+    .gameContent .row div h1 {
+        font-size: 40px;
+    }
+
+    .gameContent .row.contentImage .col-sm-3{
+        height: 100px;
+    }
+    
+    .gameContent .row.contentImage img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Tablet device version */
+@media (min-width: 768px) and (max-width: 992px) {
+    .customHeader a .headerTitle {
+        font-size: 30px;
+    }
+
+    .bgColor {
+        height: 100%;
+    }
+    
+    .gameContent .row div h3 {
+        font-size: 28px;
+    }
+
+    .gameContent .row div h1 {
+        font-size: 64px;
+    }
+
+    .gameContent .row.contentImage .col-sm-3{
+        height: 150px;
+    }
+    
+    .gameContent .row.contentImage img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Desktop version */
+@media (min-width: 992px) {
+    .customHeader a .headerTitle {
+        font-size: 30px;
+    }
+    
+    .bgColor {
+        height: 100%;
+    }
+    
+    .gameContent .row div h3 {
+        font-size: 28px;
+    }
+
+    .gameContent .row div h1 {
+        font-size: 80px;
+    }
+
+    .gameContent .row.contentImage .col-sm-3{
+        height: 150px;
+    }
+    
+    .gameContent .row.contentImage img {
+        width: 100px;
+        height: 100px;
+    }
 }
