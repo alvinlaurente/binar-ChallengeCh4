@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="game_style.css">
+
+	<!-- Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" />
+
+	<link rel="icon" href="assets/game-controller.svg" type="image/svg+xml" />
+	<title>Rock Paper Scissors | Game</title>
+</head>
+
+<body>
+	<!-- Header -->
+	<div class="align-items-center customHeader" id="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-7 my-2">
+					<div class="d-inline-block mr-3">
+						<a href="#">
+							<svg width="40px" height="40px" viewBox="0 0 16 16" class="bi bi-chevron-left"
+								fill="rgb(114,76,33)" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+							</svg>
+						</a>
+					</div>
+					<a href="#">
+						<div class="d-inline-block mr-3">
+							<img src="assets/logo.png" width="40px" height="40px" class="" alt="logo">
+						</div>
+					</a>
+					<a href="#">
+						<div class="d-inline-block mx-auto align-middle headerTitle">
+							Rock Paper Scissors
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of header -->
+
+	<!-- Game Content -->
+	<div class="container-fluid bgColor">
+		<div class="container gameContent">
+			<div class="row mb-1">
+				<div class="col-lg-3 offset-lg-1 player">
+					<h3>Player 1</h3>
+				</div>
+				<div class="col-lg-3 offset-lg-4 computer">
+					<h3>Com</h3>
+				</div>
+			</div>
+
+			<div class="row abu">
+				<div class="col-lg-3 offset-lg-1 p1Rock">
+					<img src="assets/10%_batu.png">
+				</div>
+				<div class="col-lg-3 offset-lg-4 compRock">
+					<img src="assets/10%_batu.png">
+				</div>
+			</div>
+
+			<div class="row align-items-center abu">
+				<div class="col-lg-3 offset-lg-1 p1Paper">
+					<img src="assets/10%_kertas.png">
+				</div>
+				<div class="col-lg-2 offset-lg-1 versus">
+					<h1>VS</h1>
+				</div>
+				<div class="col-lg-3 offset-lg-1 compPaper">
+					<img src="assets/10%_kertas.png">
+				</div>
+			</div>
+
+			<div class="row abu">
+				<div class="col-lg-3 offset-lg-1 p1Scissor">
+					<img src="assets/10%_gunting.png">
+				</div>
+				<div class="col-lg-3 offset-lg-4 compScissor">
+					<img src="assets/10%_gunting.png">
+				</div>
+			</div>
+
+			<div class="row my-2 py-3">
+				<div class="col-lg-2 offset-lg-5 refresh">
+					<img src="assets/10%_refresh.png">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+	integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+	integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+	crossorigin="anonymous"></script>
+
+</html>
