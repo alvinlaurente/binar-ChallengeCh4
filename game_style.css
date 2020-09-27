@@ -82,8 +82,10 @@ body, html {
     display: table-cell;
     vertical-align: middle;
     background-color: #4C9654;
-    border-radius: 15%;
+    border-radius: 5%;
     font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
     color: #ffffff;
     height: 55px;
 }
@@ -176,7 +178,7 @@ body, html {
     }
 
     .gameContent .row.contentImage .versus .result h5 {
-        font-size: 32px;
+        font-size: 28px;
         height: 100px !important;
     }
 }
