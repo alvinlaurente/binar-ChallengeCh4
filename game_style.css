@@ -4,6 +4,7 @@ body, html {
     font-family: "Open Sans", sans-serif;
 }
 
+/* Header */
 .customHeader div .d-inline-block {
     line-height: 2;
 }
@@ -16,13 +17,14 @@ body, html {
 }
 
 .bgColor {
-    height: 110%;
+    height: 100%;
     position: absolute;
     z-index: -1;
     top: 0;
     background-color: rgb(156, 131, 95);
 }
 
+/* Game Content */
 .gameContent {
     position: relative;
     top: 100px;
@@ -35,14 +37,8 @@ body, html {
     font-size: 20px;
 }
 
-.gameContent .row div h1 {
-    font-weight: bold;
-    font-size: 40px;
-    color: rgb(189,48,46);
-}
-
-.gameContent .row.contentImage .col-xs-3{
-    height: 70px;
+.gameContent .row.contentImage .col-4{
+    height: 75px;
 }
 
 .gameContent .row.contentImage img {
@@ -57,9 +53,41 @@ body, html {
 }
 
 .gameContent .row div.refresh img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 }
+
+.gameContent .row.contentImage .versus {
+    position: relative;
+    z-index: 1;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.gameContent .row.contentImage .versus h1 {
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(189,48,46);
+}
+
+.gameContent .row.contentImage .versus .result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(-30deg);
+}
+
+.gameContent .row.contentImage .versus .result h5{
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #4C9654;
+    border-radius: 15%;
+    font-size: 14px;
+    color: #ffffff;
+    height: 55px;
+}
+
 
 
 /* Smaller Device version */
@@ -68,25 +96,30 @@ body, html {
         font-size: 24px;
     }
 
-    .bgColor {
-        height: 100%;
-    }
-
     .gameContent .row div h3 {
         font-size: 24px;
     }
 
-    .gameContent .row div h1 {
-        font-size: 40px;
+    .gameContent .row.contentImage .col-sm-3{
+        height: 100px;
     }
 
-    .gameContent .row.contentImage .col-sm-3{
+    .gameContent .row.contentImage .col-sm-2{
         height: 100px;
     }
     
     .gameContent .row.contentImage img {
         width: 80px;
         height: 80px;
+    }
+
+    .gameContent .row.contentImage .versus h1 {
+        font-size: 40px;
+    }
+
+    .gameContent .row.contentImage .versus .result h5 {
+        font-size: 28px;
+        height: 90px !important;
     }
 }
 
@@ -95,17 +128,9 @@ body, html {
     .customHeader a .headerTitle {
         font-size: 30px;
     }
-
-    .bgColor {
-        height: 100%;
-    }
     
     .gameContent .row div h3 {
         font-size: 28px;
-    }
-
-    .gameContent .row div h1 {
-        font-size: 64px;
     }
 
     .gameContent .row.contentImage .col-sm-3{
@@ -115,6 +140,15 @@ body, html {
     .gameContent .row.contentImage img {
         width: 100px;
         height: 100px;
+    }
+
+    .gameContent .row.contentImage .versus h1 {
+        font-size: 64px;
+    }
+
+    .gameContent .row.contentImage .versus .result h5 {
+        font-size: 28px;
+        height: 90px !important;
     }
 }
 
@@ -123,17 +157,9 @@ body, html {
     .customHeader a .headerTitle {
         font-size: 30px;
     }
-    
-    .bgColor {
-        height: 100%;
-    }
-    
+
     .gameContent .row div h3 {
         font-size: 28px;
-    }
-
-    .gameContent .row div h1 {
-        font-size: 80px;
     }
 
     .gameContent .row.contentImage .col-sm-3{
@@ -143,5 +169,14 @@ body, html {
     .gameContent .row.contentImage img {
         width: 100px;
         height: 100px;
+    }
+
+    .gameContent .row.contentImage .versus h1 {
+        font-size: 80px;
+    }
+
+    .gameContent .row.contentImage .versus .result h5 {
+        font-size: 32px;
+        height: 100px !important;
     }
 }
