@@ -16,10 +16,12 @@ function getResult(comp, player) {
 
 /* Jalankan game */
 
+/* Beri delay untuk membuat komputer seolah berpikir dahulu */
 function wait() {
 	const compBox = document.querySelectorAll('.greyBox.compImage');
 	const start = new Date().getTime();
 	let i = 0;
+
 	setInterval(function () {
 		/* Jalankan fungsi dalam waktu 1s */
 		if (new Date().getTime() - start >= 1000) {
@@ -30,6 +32,19 @@ function wait() {
 		/* Komputer seolah-olah berpikir dengan bantuan greyBox */
 		compBox[i++].style.backgroundColor = '#c4c4c4';
 		if (i == compBox.length) i = 0;
+
+		/* Hapus tulisan hasil dalam result saat wait() */
+		const textResult = document.querySelector('.result h5');
+		textResult.innerHTML = '';
+
+		/* Hilangkan kembali class result saat wait () */
+		const resultClass = document.querySelector('.versus div div');
+		resultClass.classList.remove('result');
+
+		/* Tampilkan kembali tulisan VS saat wait () */
+		const versus = document.querySelector('.versus h1');
+		versus.style.color = 'rgb(189,48,46)';
+
 	}, 100);
 
 	setTimeout(function () {
@@ -50,7 +65,7 @@ function wait() {
 const player = document.querySelectorAll('.contentImage .player');
 player.forEach(function (choice) {
 	choice.addEventListener('click', function () {
-		/* Reset warna greyBox pada sisi player saat game dijalankan */
+		/* Samarkan greyBox pada sisi player saat game dijalankan */
 		const playerBox = document.querySelectorAll('.greyBox.playerImage');
 		for (let i = 0; i < playerBox.length; i++) {
 			playerBox[i].style.backgroundColor = '#9c835f';
@@ -91,6 +106,9 @@ player.forEach(function (choice) {
 			if (result == "DRAW") {
 				textResult.style.backgroundColor = '#225c0e';
 			}
+			else {
+				textResult.style.backgroundColor = '#4c9654';
+			}
 
 			/* Berikan greyBox pada comp choice */
 			const compBox = document.querySelectorAll('.greyBox.compImage');
@@ -104,7 +122,7 @@ player.forEach(function (choice) {
 				compBox[2].style.backgroundColor = '#c4c4c4';
 			}
 
-			/* Mereset game dengan tombol refresh */
+			/* Reset tampilan game dengan tombol refresh */
 			const reset = document.querySelector('.refresh');
 			reset.addEventListener('click', function () {
 				/* Hapus tulisan hasil dalam result */
@@ -113,7 +131,7 @@ player.forEach(function (choice) {
 				/* Hilangkan kembali class result */
 				resultClass.classList.remove('result');
 
-				/* Hilangkan kembali greyBox */
+				/* Hilangkan kembali seluruh greyBox */
 				for (let i = 0; i < compBox.length; i++) {
 					playerBox[i].style.backgroundColor = '#9c835f';
 					compBox[i].style.backgroundColor = '#9c835f';
