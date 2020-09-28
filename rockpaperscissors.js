@@ -7,18 +7,24 @@ function getCompChoice() {
 }
 
 // Rules permainan
+let result = null;
 function getResult(comp, player) {
-	if (player == comp) return 'DRAW';
-	if (player == 'rock') return (comp == 'scissor') ? 'PLAYER WIN' : 'COM WIN';
-	if (player == 'paper') return (comp == 'rock') ? 'PLAYER WIN' : 'COM WIN';
-	if (player == 'scissor') return (comp == 'paper') ? 'PLAYER WIN' : 'COM WIN';
+	if (player == comp) return result = 'DRAW';
+	if (player == 'rock') return (comp == 'scissor') ? result = 'PLAYER 1 WIN' : result = 'COM WIN';
+	if (player == 'paper') return (comp == 'rock') ? result = 'PLAYER 1 WIN' : result = 'COM WIN';
+	if (player == 'scissor') return (comp == 'paper') ? result = 'PLAYER 1 WIN' : result = 'COM WIN';
 }
 
 /* Jalankan game */
 
+const resultClass = document.querySelector('.versus div div');
+const versus = document.querySelector('.versus h1');
+const compBox = document.querySelectorAll('.greyBox.compImage');
+const playerBox = document.querySelectorAll('.greyBox.playerImage');
+
 /* Beri delay untuk membuat komputer seolah berpikir dahulu */
+
 function wait() {
-	const compBox = document.querySelectorAll('.greyBox.compImage');
 	const start = new Date().getTime();
 	let i = 0;
 
@@ -33,16 +39,10 @@ function wait() {
 		compBox[i++].style.backgroundColor = '#c4c4c4';
 		if (i == compBox.length) i = 0;
 
-		/* Hapus tulisan hasil dalam result saat wait() */
-		const textResult = document.querySelector('.result h5');
-		textResult.innerHTML = '';
-
 		/* Hilangkan kembali class result saat wait () */
-		const resultClass = document.querySelector('.versus div div');
 		resultClass.classList.remove('result');
 
 		/* Tampilkan kembali tulisan VS saat wait () */
-		const versus = document.querySelector('.versus h1');
 		versus.style.color = 'rgb(189,48,46)';
 
 	}, 100);
@@ -61,85 +61,92 @@ function wait() {
 	}, 100);
 }
 
+
 /* Menangkap pilihan pemain */
 const player = document.querySelectorAll('.contentImage .player');
 player.forEach(function (choice) {
 	choice.addEventListener('click', function () {
-		/* Samarkan greyBox pada sisi player saat game dijalankan */
-		const playerBox = document.querySelectorAll('.greyBox.playerImage');
+		/* Samarkan seluruh greyBox pada sisi player saat game dijalankan */
 		for (let i = 0; i < playerBox.length; i++) {
 			playerBox[i].style.backgroundColor = '#9c835f';
 		}
 
-		/* Tangkap pilihan komputer */
-		const compChoice = getCompChoice();
+		/* Eventlistener hanya dikerjakan apabila result masih dalam kondisi null */
+		if (result === null) {
+			/* Tangkap pilihan komputer */
+			const compChoice = getCompChoice();
 
-		/* Tangkap pilihan pemain */
-		const p1Choice = choice.className.substr(7, 7);
+			/* Tangkap pilihan pemain */
+			const p1Choice = choice.className.substr(7, 7);
 
-		/* Jalankan Rules permainan untuk mendapatkan hasil */
-		const result = getResult(compChoice, p1Choice);
+			/* Jalankan Rules permainan untuk mendapatkan hasil */
+			result = getResult(compChoice, p1Choice);
 
-		/* Berikan greyBox pada pilihan pemain */
-		playerBox.forEach(function (p1Choice) {
-			p1Choice.addEventListener('click', function () {
-				p1Choice.style.backgroundColor = '#c4c4c4';
+			/* Berikan greyBox pada pilihan pemain */
+			playerBox.forEach(function (p1Choice) {
+				p1Choice.addEventListener('click', function () {
+					p1Choice.style.backgroundColor = '#c4c4c4';
+				});
 			});
-		});
 
-		/* Jalankan fungsi wait agar komputer terlihat berpikir dahulu */
-		wait();
+			/* Jalankan fungsi wait agar komputer terlihat berpikir dahulu */
+			wait();
 
-		/* Jalankan seluruh perintah dibawah setelah fungsi wait selesai dijalankan */
-		setTimeout(function () {
-			/* Samarkan tulisan VS dengan background saat hasil ditampilkan */
-			const versus = document.querySelector('.versus h1');
-			versus.style.color = '#9c835f';
+			/* Jalankan seluruh perintah dibawah setelah fungsi wait selesai dijalankan */
+			setTimeout(function () {
+				/* Samarkan tulisan VS dengan background saat hasil ditampilkan */
+				versus.style.color = '#9c835f';
 
-			/* Tampilkan class result */
-			const resultClass = document.querySelector('.versus div div');
-			resultClass.classList.add('result');
+				/* Tampilkan class result */
+				resultClass.classList.add('result');
 
-			/* Tampilkan hasil dalam class result (kotak hijau) */
-			const textResult = document.querySelector('.result h5');
-			textResult.innerHTML = result;
-			if (result == "DRAW") {
-				textResult.style.backgroundColor = '#225c0e';
-			}
-			else {
-				textResult.style.backgroundColor = '#4c9654';
-			}
-
-			/* Berikan greyBox pada comp choice */
-			const compBox = document.querySelectorAll('.greyBox.compImage');
-			if (compChoice == 'rock') {
-				compBox[0].style.backgroundColor = '#c4c4c4';
-			}
-			else if (compChoice == 'paper') {
-				compBox[1].style.backgroundColor = '#c4c4c4';
-			}
-			else {
-				compBox[2].style.backgroundColor = '#c4c4c4';
-			}
-
-			/* Reset tampilan game dengan tombol refresh */
-			const reset = document.querySelector('.refresh');
-			reset.addEventListener('click', function () {
-				/* Hapus tulisan hasil dalam result */
-				textResult.innerHTML = '';
-
-				/* Hilangkan kembali class result */
-				resultClass.classList.remove('result');
-
-				/* Hilangkan kembali seluruh greyBox */
-				for (let i = 0; i < compBox.length; i++) {
-					playerBox[i].style.backgroundColor = '#9c835f';
-					compBox[i].style.backgroundColor = '#9c835f';
+				/* Tampilkan hasil dalam class result (kotak hijau) */
+				const textResult = document.querySelector('.result h5');
+				textResult.innerHTML = result;
+				if (result == "DRAW") {
+					textResult.style.backgroundColor = '#225c0e';
+				}
+				else {
+					textResult.style.backgroundColor = '#4c9654';
 				}
 
-				/* Tampilkan kembali tulisan VS */
-				versus.style.color = 'rgb(189,48,46)';
-			});
-		}, 1200);
+				/* Berikan greyBox pada comp choice */
+				if (compChoice == 'rock') {
+					compBox[0].style.backgroundColor = '#c4c4c4';
+				}
+				else if (compChoice == 'paper') {
+					compBox[1].style.backgroundColor = '#c4c4c4';
+				}
+				else {
+					compBox[2].style.backgroundColor = '#c4c4c4';
+				}
+			}, 1200);
+		}
+		else {
+			alert('Silahkan tekan logo refresh terlebih dahulu!');
+		}
 	});
+});
+
+/* Reset tampilan game dengan tombol refresh */
+const reset = document.querySelector('.refresh');
+reset.addEventListener('click', function () {
+	/* Hapus tulisan hasil dalam result */
+	const textResult = document.querySelector('.result h5');
+	textResult.innerHTML = '';
+
+	/* Hilangkan kembali class result */
+	resultClass.classList.remove('result');
+
+	/* Hilangkan kembali seluruh greyBox */
+	for (let i = 0; i < compBox.length; i++) {
+		playerBox[i].style.backgroundColor = '#9c835f';
+		compBox[i].style.backgroundColor = '#9c835f';
+	}
+
+	/* Tampilkan kembali tulisan VS */
+	versus.style.color = 'rgb(189,48,46)';
+
+	/* Reset kembali result menjadi null agar dapat melakukan permainan kembali */
+	result = null;
 });
