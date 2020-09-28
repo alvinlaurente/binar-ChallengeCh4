@@ -21,7 +21,7 @@ body, html {
     position: absolute;
     z-index: -1;
     top: 0;
-    background-color: rgb(156, 131, 95);
+    background-color: #9c835f;
 }
 
 /* Game Content */
@@ -47,7 +47,6 @@ body, html {
 }
 
 .gameContent .row div.greyBox {
-    /*background-color: #c4c4c4;*/
     border-radius: 15%;
 }
 
@@ -66,7 +65,7 @@ body, html {
 .gameContent .row.contentImage .versus h1 {
     font-weight: bold;
     font-size: 40px;
-    color: rgb(189,48,46);
+    color: #bd302f;
 }
 
 .gameContent .row.contentImage .versus .result {
