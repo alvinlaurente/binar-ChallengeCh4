@@ -45,7 +45,7 @@ function wait() {
 		/* Tampilkan kembali tulisan VS saat wait () */
 		versus.style.color = 'rgb(189,48,46)';
 
-	}, 100);
+	}, 50);
 
 	setTimeout(function () {
 		setInterval(function () {
@@ -57,8 +57,8 @@ function wait() {
 			/* Handling agar Menyamarkan greyBox dengan bgColor supaya tidak semuanya memiliki greyBox berwarna abu */
 			compBox[i++].style.backgroundColor = '#9c835f';
 			if (i == compBox.length) i = 0;
-		}, 100);
-	}, 100);
+		}, 50);
+	}, 50);
 }
 
 
