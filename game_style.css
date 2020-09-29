@@ -1,196 +1,198 @@
 body, html {
-    scroll-behavior: smooth;
-    text-decoration: none !important;
-    font-family: "Open Sans", sans-serif;
+	scroll-behavior: smooth;
+	text-decoration: none !important;
+	font-family: "Open Sans", sans-serif;
 }
 
 /* Header */
 .customHeader div .d-inline-block {
-    line-height: 2;
+	line-height: 2;
 }
 
 .customHeader a .headerTitle{
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffc107;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #ffc107;
 }
 
 .bgColor {
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    background-color: #9c835f;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	background-color: #9c835f;
 }
 
 /* Game Content */
 .gameContent {
-    position: relative;
-    top: 100px;
-    text-align: center !important;
+	position: relative;
+	top: 100px;
+	text-align: center !important;
 }
 
 .gameContent .row div h3 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .gameContent .row.contentImage .col-4{
-    height: 75px;
+	height: 75px;
 }
 
 .gameContent .row.contentImage img {
-    width: 40px;
-    height: 40px;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
 }
 
 .gameContent .row div.greyBox {
-    border-radius: 15%;
+	border-radius: 15%;
 }
 
 .gameContent .refresh{
-    width: 50px;
-    height: 50px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
 }
 
 .gameContent .row.contentImage .versus {
-    position: relative;
-    z-index: 1;
-    display: table-cell;
-    vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .gameContent .row.contentImage .versus h1 {
-    font-weight: bold;
-    font-size: 40px;
-    color: #bd302f;
+	font-weight: bold;
+	font-size: 40px;
+	color: #bd302f;
 }
 
 .gameContent .row.contentImage .versus .result {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transform: rotate(-30deg);
-    margin-left: -30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transform: rotate(-30deg);
+	margin-left: -30px;
 }
 
 .gameContent .row.contentImage .versus .result h5{
-    display: table-cell;
-    vertical-align: middle;
-    background-color: #4C9654;
-    border-radius: 5%;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #ffffff;
-    height: 55px;
-    padding: 10px 40px;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #4C9654;
+	border-radius: 5%;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #ffffff;
+	height: 55px;
+	padding: 10px 40px;
 }
 
 
 
 /* Smaller Device version */
 @media (min-width: 576px) and (max-width: 768px) {
-    .customHeader a .headerTitle {
-        font-size: 24px;
-    }
+	.customHeader a .headerTitle {
+			font-size: 24px;
+	}
 
-    .gameContent .row div h3 {
-        font-size: 24px;
-    }
+	.gameContent .row div h3 {
+			font-size: 24px;
+	}
 
-    .gameContent .row.contentImage .col-sm-3{
-        height: 100px;
-    }
+	.gameContent .row.contentImage .col-sm-3{
+			height: 100px;
+	}
 
-    .gameContent .row.contentImage .col-sm-2{
-        height: 100px;
-    }
-    
-    .gameContent .row.contentImage img {
-        width: 80px;
-        height: 80px;
-    }
+	.gameContent .row.contentImage .col-sm-2{
+			height: 100px;
+	}
+	
+	.gameContent .row.contentImage img {
+			width: 80px;
+			height: 80px;
+	}
 
-    .gameContent .row.contentImage .versus h1 {
-        font-size: 40px;
-    }
+	.gameContent .row.contentImage .versus h1 {
+			font-size: 40px;
+	}
 
-    .gameContent .row.contentImage .versus .result h5 {
-        font-size: 28px;
-        height: 90px !important;
-    }
+	.gameContent .row.contentImage .versus .result h5 {
+			font-size: 28px;
+			height: 90px !important;
+	}
 }
 
 /* Tablet device version */
 @media (min-width: 768px) and (max-width: 992px) {
-    .customHeader a .headerTitle {
-        font-size: 30px;
-    }
-    
-    .gameContent {
-        top: 80px;
-    }
+	.customHeader a .headerTitle {
+			font-size: 30px;
+	}
+	
+	.gameContent {
+			top: 80px;
+	}
 
-    .gameContent .row div h3 {
-        font-size: 28px;
-    }
+	.gameContent .row div h3 {
+			font-size: 28px;
+	}
 
-    .gameContent .row.contentImage .col-sm-3{
-        height: 150px;
-    }
-    
-    .gameContent .row.contentImage img {
-        width: 100px;
-        height: 100px;
-    }
+	.gameContent .row.contentImage .col-sm-3{
+			height: 150px;
+	}
+	
+	.gameContent .row.contentImage img {
+			width: 100px;
+			height: 100px;
+	}
 
-    .gameContent .row.contentImage .versus h1 {
-        font-size: 64px;
-    }
+	.gameContent .row.contentImage .versus h1 {
+			font-size: 64px;
+	}
 
-    .gameContent .row.contentImage .versus .result h5 {
-        font-size: 28px;
-        height: 90px !important;
-    }
+	.gameContent .row.contentImage .versus .result h5 {
+			font-size: 28px;
+			height: 90px !important;
+	}
 }
 
 /* Desktop version */
 @media (min-width: 992px) {
-    .customHeader a .headerTitle {
-        font-size: 30px;
-    }
+	.customHeader a .headerTitle {
+			font-size: 30px;
+	}
 
-    .bgColor {
-        height: 105%;
-    }
+	.bgColor {
+			height: 105%;
+	}
 
-    .gameContent {
-        top: 80px;
-    }
+	.gameContent {
+			top: 80px;
+	}
 
-    .gameContent .row div h3 {
-        font-size: 28px;
-    }
+	.gameContent .row div h3 {
+			font-size: 28px;
+	}
 
-    .gameContent .row.contentImage .col-sm-3{
-        height: 150px;
-    }
-    
-    .gameContent .row.contentImage img {
-        width: 100px;
-        height: 100px;
-    }
+	.gameContent .row.contentImage .col-sm-3{
+			height: 150px;
+	}
+	
+	.gameContent .row.contentImage img {
+			width: 100px;
+			height: 100px;
+	}
 
-    .gameContent .row.contentImage .versus h1 {
-        font-size: 80px;
-    }
+	.gameContent .row.contentImage .versus h1 {
+			font-size: 80px;
+	}
 
-    .gameContent .row.contentImage .versus .result h5 {
-        font-size: 28px;
-        height: 100px !important;
-    }
+	.gameContent .row.contentImage .versus .result h5 {
+			font-size: 28px;
+			height: 100px !important;
+	}
 }
