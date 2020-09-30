@@ -15,10 +15,11 @@ function getResult(comp, player) {
 	if (player == 'scissor') return (comp == 'paper') ? result = 'PLAYER 1 WIN' : result = 'COM WIN';
 }
 
-/* Jalankan game */
-
-const resultClass = document.querySelector('.versus div div');
+/* Game dimulai */
+/* DOM Selector */
 const versus = document.querySelector('.versus h1');
+const resultClass = document.querySelector('.versus div div');
+const textResult = document.querySelector('.versus h5');
 const compBox = document.querySelectorAll('.greyBox.compImage');
 const playerBox = document.querySelectorAll('.greyBox.playerImage');
 
@@ -77,17 +78,21 @@ player.forEach(function (choice) {
 			const compChoice = getCompChoice();
 
 			/* Tangkap pilihan pemain */
-			const p1Choice = choice.className.substr(7, 7);
+			const playerChoice = choice.className.substr(7, 7);
 
 			/* Jalankan Rules permainan untuk mendapatkan hasil */
-			result = getResult(compChoice, p1Choice);
+			result = getResult(compChoice, playerChoice);
 
 			/* Berikan greyBox pada pilihan pemain */
-			playerBox.forEach(function (p1Choice) {
-				p1Choice.addEventListener('click', function () {
-					p1Choice.style.backgroundColor = '#c4c4c4';
-				});
-			});
+			if (playerChoice == 'rock') {
+				playerBox[0].style.backgroundColor = '#c4c4c4';
+			}
+			else if (playerChoice == 'paper') {
+				playerBox[1].style.backgroundColor = '#c4c4c4';
+			}
+			else {
+				playerBox[2].style.backgroundColor = '#c4c4c4';
+			}
 
 			/* Jalankan fungsi wait agar komputer terlihat berpikir dahulu */
 			wait();
@@ -101,7 +106,6 @@ player.forEach(function (choice) {
 				resultClass.classList.add('result');
 
 				/* Tampilkan hasil dalam class result (kotak hijau) */
-				const textResult = document.querySelector('.result h5');
 				textResult.innerHTML = result;
 				if (result == "DRAW") {
 					textResult.style.backgroundColor = '#225c0e';
@@ -132,7 +136,6 @@ player.forEach(function (choice) {
 const reset = document.querySelector('.refresh');
 reset.addEventListener('click', function () {
 	/* Hapus tulisan hasil dalam result */
-	const textResult = document.querySelector('.result h5');
 	textResult.innerHTML = '';
 
 	/* Hilangkan kembali class result */
